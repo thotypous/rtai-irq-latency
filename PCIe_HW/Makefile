@@ -9,7 +9,6 @@ de4_pcie/synthesis/de4_pcie.qip: de4_pcie.qsys mkEchoModule.v
 	$(QUARTUS_ROOTDIR)/sopc_builder/bin/qsys-generate --synthesis=VERILOG $<
 
 mkEchoModule.v: $(wildcard BSV/*.bsv)
-	echo $(QUARTUS_ROOTDIR)
 	bsc -u -verilog -vdir . -bdir BSV  BSV/EchoModule.bsv
 
 clean:
