@@ -4,6 +4,9 @@ Module.symvers
 *.ko
 *.mod.c
 *.o
+*.ko.cmd
+*.o.cmd
+.tmp_versions
 
 # Bluespec
 *.bo
@@ -15,3 +18,4 @@ PLLJ_PLLSPE_INFO.txt
 db
 incremental_db
 output_files
+/PCIe_HW/de4_pcie
