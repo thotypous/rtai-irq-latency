@@ -6,7 +6,7 @@ all: output_files/de4_pcie.sof
 output_files/de4_pcie.sof: de4_pcie/synthesis/de4_pcie.qip de4_pcie.qsf
 	$(QUARTUS_ROOTDIR)/bin/quartus_sh --flow compile de4_pcie
 
-%.qsf: %.qsf.tpl
+%.qsf: %.qsftpl
 	sed 's,$${BLUESPECHOME},$(BLUESPECHOME),g' $< > $@
 
 de4_pcie/synthesis/de4_pcie.qip: de4_pcie.qsys mkEchoModule.v
