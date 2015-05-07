@@ -1,0 +1,17 @@
+# Kernel modules
+modules.order
+Module.symvers
+*.ko
+*.mod.c
+*.o
+
+# Bluespec
+*.bo
+mk*.v
+
+# Quartus II
+PLLJ_PLLSPE_INFO.txt
+*.sopcinfo
+db
+incremental_db
+output_files
