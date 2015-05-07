@@ -18,4 +18,5 @@ PLLJ_PLLSPE_INFO.txt
 db
 incremental_db
 output_files
+/PCIe_HW/de4_pcie.qsf
 /PCIe_HW/de4_pcie

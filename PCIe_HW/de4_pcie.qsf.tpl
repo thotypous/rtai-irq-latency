@@ -43,8 +43,8 @@ set_global_assignment -name TOP_LEVEL_ENTITY de4_pcie_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:22:01  APRIL 03, 2015"
 set_global_assignment -name LAST_QUARTUS_VERSION 14.1.1
-set_global_assignment -name SEARCH_PATH "/opt/bluespec/Bluespec-2014.06.A/lib/Verilog.Quartus"
-set_global_assignment -name SEARCH_PATH "/opt/bluespec/Bluespec-2014.06.A/lib/Verilog"
+set_global_assignment -name SEARCH_PATH "${BLUESPECHOME}/lib/Verilog.Quartus"
+set_global_assignment -name SEARCH_PATH "${BLUESPECHOME}/lib/Verilog"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
