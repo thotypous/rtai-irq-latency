@@ -1,12 +1,22 @@
 module de4_pcie_top(
-	input OSC_50_BANK2,
-	input PCIE_PREST_n,
-	input PCIE_REFCLK_p,
-	input [3:0] PCIE_RX_p,
-	output [3:0] PCIE_TX_p,
-	output [7:0] LED,
-	output [35:0] GPIO1_D
+        input OSC_50_BANK2,
+        input PCIE_PREST_n,
+        input PCIE_REFCLK_p,
+        input [3:0] PCIE_RX_p,
+        output [3:0] PCIE_TX_p,
+        output [7:0] LED,
+        output [35:0] GPIO1_D
 );
+
+    wire [16:0] pcie_reconfig_fromgxb_0_data;
+    wire [ 3:0] pcie_reconfig_togxb_data;
+
+    altgx_reconfig gxreconf0 (
+        .reconfig_clk(OSC_50_BANK2),
+        .reconfig_fromgxb(pcie_reconfig_fromgxb_0_data),
+        .reconfig_togxb(pcie_reconfig_togxb_data)
+    );
+
 
     de4_pcie u0 (
         .clk_clk                                 (OSC_50_BANK2),
@@ -22,6 +32,10 @@ module de4_pcie_top(
         .pcie_tx_out_tx_dataout_3                (PCIE_TX_p[3]),
         .reset_reset_n                           (1'b1),
         .irqflagtap_irqflagtap                   (GPIO1_D[14]),
+
+        .pcie_reconfig_gxbclk_clk                (OSC_50_BANK2),
+        .pcie_reconfig_fromgxb_0_data            (pcie_reconfig_fromgxb_0_data),
+        .pcie_reconfig_togxb_data                (pcie_reconfig_togxb_data),
     );
 
 endmodule
