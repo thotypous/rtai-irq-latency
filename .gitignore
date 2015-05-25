@@ -7,16 +7,3 @@ Module.symvers
 *.ko.cmd
 *.o.cmd
 .tmp_versions
-
-# Bluespec
-*.bo
-mk*.v
-
-# Quartus II
-PLLJ_PLLSPE_INFO.txt
-*.sopcinfo
-db
-incremental_db
-output_files
-/PCIe_HW/de4_pcie.qsf
-/PCIe_HW/de4_pcie
